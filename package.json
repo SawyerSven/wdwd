@@ -2,7 +2,10 @@
   "name": "wdwd-cli",
   "version": "0.0.1",
   "bin": {
-    "wdwd":"./bin/wdwd.js"
+    "wdwd": "./bin/wdwd.js"
+  },
+  "engines": {
+    "node": ">=7.0.0"
   },
   "description": "What do you want to develop",
   "main": "lib/cli/index.js",
@@ -17,5 +20,8 @@
     "co-prompt": "^1.0.0",
     "commander": "^6.1.0",
     "ora": "^5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0"
   }
 }
