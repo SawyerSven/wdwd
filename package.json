@@ -7,6 +7,11 @@
   "engines": {
     "node": ">=7.0.0"
   },
+  "scripts": {
+    "compile":"./node_modules/.bin/babel src --out-dir dist",
+    "watch":"yarn compile --watch",
+    "lint": "./node_modules/.bin/eslint src/*.js"
+  },
   "description": "What do you want to develop",
   "main": "lib/cli/index.js",
   "repository": "https://github.com/SawyerSven/wdwd",
@@ -14,6 +19,10 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
     "chalk": "^4.1.0",
     "cli-table": "^0.3.1",
     "co": "^4.6.0",
@@ -22,6 +31,12 @@
     "ora": "^5.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.9.0"
+    "eslint": "^7.9.0",
+    "husky": "^4.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
   }
 }
