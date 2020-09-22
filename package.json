@@ -8,8 +8,8 @@
     "node": ">=7.0.0"
   },
   "scripts": {
-    "compile":"./node_modules/.bin/babel src --out-dir dist",
-    "watch":"yarn compile --watch",
+    "compile": "./node_modules/.bin/babel src --out-dir dist",
+    "watch": "yarn compile --watch",
     "lint": "./node_modules/.bin/eslint src/*.js"
   },
   "description": "What do you want to develop",
@@ -31,12 +31,15 @@
     "ora": "^5.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "eslint": "^7.9.0",
     "husky": "^4.3.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "pre-commit": "yarn lint",
+      "commit-msg": "yarn commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
